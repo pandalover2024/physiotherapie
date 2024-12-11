@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physiotherapie Mahmoud Albozan</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #333; /* Dark grey background */
+            overflow: hidden; /* Prevent scrolling on the entire body */
+        }
+        header {
+            background-color: #2fc45f;
+            padding: 10px 0;
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10px;
+        }
+        header .logo img {
+            width: 50px;
+            height: auto;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 5px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            padding: 5px 10px;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+        nav ul li a.active,
+        nav ul li a:hover {
+            background-color: #007bff;
+        }
+        .container {
+            max-width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .content-section {
+            display: none;
+            padding: 20px;
+            background: #444; /* Dark grey section background */
+            color: #fff;
+            border-radius: 10px;
+            margin: 10px 0;
+            text-align: center; /* Center align text */
+            height: 100vh; /* Full viewport height */
+            overflow-y: hidden; /* Hide overflow except in specific sections */
+        }
+        .content-section.active {
+            display: block;
+            overflow-y: auto; /* Enable scrolling for active section */
+        }
+        .content-section h2 {
+            color: #007bff; /* Blue color */
+            font-size: 3rem; /* Larger font size */
+            margin-bottom: 20px; /* Adjust spacing */
+        }
+        .services-list, .qualifications-list {
+            list-style: none;
+            padding: 0;
+        }
+        .services-list li, .qualifications-list li {
+            margin: 10px 0;
+            color: blue;
+        }
+        .services-list li::before, .qualifications-list li::before {
+            content: '➤';
+            color: blue;
+            margin-right: 10px;
+        }
+        #team h2 {
+    margin-top: -30px; /* Adjust the top margin to push the title further up */
+}
+
+
+.team-member {
+    text-align: center;
+    margin-top: 20px; /* Adjust top margin to push content further up */
+}
+
+
+
+        .team-member img {
+            width: 500px; /* Adjust the size as needed */
+            height: 300px; /* Making the image square */
+            object-fit: cover; /* Maintain aspect ratio and cover the container */
+            border-radius: 10px; /* Rounded corners */
+            margin-bottom: 10px;
+        }
+        .team-member .ifk-logo {
+            width: 100px;
+            height: auto;
+            margin-top: 10px;
+        }
+        footer {
+            background-color: #2fc45f;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+        @media (max-width: 768px) {
+            header .logo img {
+                width: 40px;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                margin: 5px 0;
+            }
+            .team-member img {
+                width: 300px; /* Larger size for desktop */
+                height: 300px; /* Making the image square */
+            }
+            #team {
+        padding-top: 50px; /* Reduce padding on smaller screens */
+    }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo1.png" alt="Praxis Logo" id="logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" data-target="home" class="nav-link active">Start</a></li>
+                    <li><a href="#" data-target="services" class="nav-link">Leistungen</a></li>
+                    <li><a href="#" data-target="about" class="nav-link">Über Uns</a></li>
+                    <li><a href="#" data-target="team" class="nav-link">Team</a></li>
+                    <li><a href="#" data-target="contact" class="nav-link">Kontakt</a></li>
+                    <li><a href="#" data-target="appointment" class="nav-link">Terminvereinbarung</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="green-box">
+            <h2 class="page-title">Physiotherapie Mahmoud Albozan</h2>
+        </div>
+    </header>
+
+    <section id="home" class="content-section active">
+        <div class="container">
+            <h2>Liebe Besucherin, Lieber Besucher,</h2>
+            <p>Schön, dass Sie sich Zeit für unsere Webseite nehmen. Gerne nehmen auch wir uns die Zeit für Sie als Mensch.</p>
+            <p>Unser Ziel ist es, Ihre Beschwerden, hervorgerufen durch Verletzungen sowie Operationen, bestmöglich zu behandeln. Selbstverständlich helfen wir Ihnen auch gerne bei grundsätzlichen Beschwerden mit Ihren täglichen Bewegungsabläufen.</p>
+            <p>Sich Wohlfühlen steht in unserer Praxis im Vordergrund. In unseren Räumlichkeiten in Krefeld-Hüls stehen Sie als Patient ganz im Mittelpunkt.</p>
+            <p>In der Praxis haben wir für Sie als Mensch jederzeit ein offenes Ohr für Ihre Anliegen. Gemeinsam mit Ihnen stimmen wir die Behandlungsform ab, um für persönliche Situation die optimale Behandlungsform zu wählen.</p>
+            <p>Ihnen steht ein umfangreiches Leistungsspektrum zur Verfügung, unter anderem:</p>
+            <ul class="services-list">
+                <li>Krankengymnastik</li>
+                <li>Manuelle Lymphdrainage</li>
+                <li>Krankengymnastik nach Bobath</li>
+                <li>Kieferbehandlung bei CMD</li>
+                <li>Kinesio-Taping</li>
+                <li>Klassische Massagetherapie</li>
+                <li>Ergänzende Heilmittel sowie</li>
+                <li>Schmerztherapie</li>
+                <li>Hausbesuche</li>
+            </ul>
+            <p>Im Vordergrund stehen dabei immer Sie als Mensch mit dem gemeinsamen Ziel, dass Ihre körperliche Bewegung für Sie schmerzfrei ist, wird und bleibt.</p>
+            <p>Wir freuen uns auf Ihren Besuch.</p>
+            <p>Herzlichst, Ihr Mahmoud Albozan</p>
+        </div>
+    </section>
+
+    <section id="services" class="content-section">
+        <div class="container">
+            <h2>Leistungen</h2>
+            <div class="service-item">
+                <img src="images/service1.png" alt="Service 1">
+                <div class="service-details">
+                    <h3>Krankengymnastik</h3>
+                    <p>Optimale Bewegungs- und Schmerzfreiheit herstellen. Tätigkeiten und Bewegungsabläufe des täglichen Lebens erlernen und trainieren.</p>
+                    <p><span class="blue-marked-text">Erfahren Sie mehr</span></p>
+                    <p><span class="white-marked-text">Kontaktieren Sie uns</span> <span class="arrow">➤</span></p>
+                </div>
+            </div>
+            <div class="service-item">
+                <img src="images/service2.png" alt="Service 2">
+                <div class="service-details">
+                    <h3>Manuelle Lymphdrainage</h3>
+                    <p>Behandlung zur Entstauung und zur Förderung des Lymphflusses.</p>
+                    <p><span class="blue-marked-text">Erfahren Sie mehr</span></p>
+                    <p><span class="white-marked-text">Kontaktieren Sie uns</span> <span class="arrow">➤</span></p>
+                </div>
+            </div>
+            <div class="service-item">
+                <img src="images/service3.png" alt="Service 3">
+                <div class="service-details">
+                    <h3>Krankengymnastik nach Bobath</h3>
+                    <p>Spezielle Therapieform zur Behandlung von Patienten mit neurologischen Erkrankungen.</p>
+                    <p><span class="blue-marked-text">Erfahren Sie mehr</span></p>
+                    <p><span class="white-marked-text">Kontaktieren Sie uns</span> <span class="arrow">➤</span></p>
+                </div>
+            </div>
+            <div class="service-item">
+                <img src="images/service4.png" alt="Service 4">
+                <div class="service-details">
+                    <h3>Kieferbehandlung bei CMD</h3>
+                    <p>Therapeutische Maßnahmen bei Kiefergelenksbeschwerden.</p>
+                    <p><span class="blue-marked-text">Erfahren Sie mehr</span></p>
+                    <p><span class="white-marked-text">Kontaktieren Sie uns</span> <span class="arrow">➤</span></p>
+                </div>
+            </div>
+            <p>Wollen Sie eine dieser Leistungen verschenken? Gerne stellen wir Ihnen einen Gutschein aus. Bitte sprechen Sie uns darauf an.</p>
+        </div>
+    </section>
+
+    <section id="about" class="content-section">
+        <div class="container">
+            <h2>Über Uns</h2>
+            <p>Schön, dass Sie sich Zeit für unsere Webseite nehmen. Unser Ziel ist es, Ihre Beschwerden bestmöglich zu behandeln. In unseren Räumlichkeiten in Krefeld-Hüls stehen Sie als Patient ganz im Mittelpunkt. Gemeinsam stimmen wir die optimale Behandlungsform ab.</p>
+        </div>
+    </section>
+
+    <section id="team" class="content-section">
+        <div class="container">
+            <h2 style="color: #007bff; font-size: 3rem; margin-bottom: 20px; text-align: center;">Team</h2>
+            <div class="team-member" style="margin-top: 20px;">
+                <img src="images/logo3.png" alt="Mahmoud Albozan">
+                <p>Mahmoud Albozan<br>Physiotherapeut seit 2017</p>
+                <h3>Zusatzqualifikationen:</h3>
+                <ul class="qualifications-list">
+                    <li>Krankengymnastik nach Bobath für Erwachsene</li>
+                    <li>Manuelle Lymphdrainage</li>
+                    <li>Kieferbehandlung bei CMD</li>
+                    <li>K-Taping</li>
+                    <li>Triggerpunkt Behandlung</li>
+                </ul>
+                <p>Sprachkenntnisse: Deutsch</p>
+                <p>Ich bin Mitglied im Bundesverband selbstständiger Physiotherapeuten (IFK).</p>
+                <img src="images/logo1.png" alt="IFK Logo" class="ifk-logo">
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <section id="contact" class="content-section">
+        <div class="container">
+            <h2>Kontakt</h2>
+            <address>
+                <p><strong>Praxis für Physiotherapie Mahmoud Albozan</strong></p>
+                <p>Herrenweg 7, 47839 Krefeld</p>
+                <p>Telefon: 02151 351 9748</p>
+                <p>Email: <a href="mailto:info@praxis-albozan.de">info@praxis-albozan.de</a></p>
+            </address>
+        </div>
+    </section>
+
+    <section id="appointment" class="content-section">
+        <div class="container">
+            <h2>Terminvereinbarung</h2>
+            <p>Bitte rufen Sie uns zur Terminvereinbarung an oder nutzen Sie das Kontaktformular auf unserer Webseite.</p>
+        </div>
+    </section>
+
+ 
+
+    <script>
+        // JavaScript code to toggle section visibility and reset scroll position
+        document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('nav ul li a[data-target]');
+    const sections = document.querySelectorAll('.content-section');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('data-target');
+
+            navLinks.forEach(navLink => {
+                navLink.classList.remove('active');
+            });
+
+            this.classList.add('active');
+
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.style.display = 'block';
+                if (targetId === 'services') {
+                    // Scroll to the top of the services section
+                    targetSection.scrollTop = 0;
+                } else {
+                    // Scroll to the top of the page for other sections
+                    window.scrollTo(0, 0);
+                }
+            }
+        });
+    });
+});
+
+
+
+
+    </script>
+</body>
+</html>
