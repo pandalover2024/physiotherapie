@@ -11,7 +11,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 60px; /* Adjust the height as needed */
+    height: 60px; /* Default height for desktop */
     background-color: #333;
     color: white;
     padding: 15px;
@@ -23,18 +23,10 @@ body {
     margin-top: 60px; /* Same height as the topbar */
     padding: 20px;
 }
-/* Ensure the body and all sections are clear of any overlap */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
 
-
-
-/* Add space below the topbar so that the content doesn't get hidden */
-body {
-    padding-top: 60px; /* Adjust this value to match the height of your topbar */
+/* Ensure the "Leistungen" section is also not covered */
+#leistungen {
+    padding-top: 20px;
 }
 
 /* Section-specific styles */
@@ -45,69 +37,40 @@ section {
     border-radius: 8px;
 }
 
-/* Ensure the "Leistungen" section is also not covered */
-#leistungen {
-    padding-top: 20px;
-}
-
-/* Responsive adjustments */
+/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
     .topbar {
-        height: 50px; /* Adjust topbar height for mobile */
+        height: 50px; /* Smaller topbar height for mobile */
     }
-    
+
     body {
         padding-top: 50px; /* Adjust padding to prevent overlap on small screens */
     }
-    
+
     section {
         margin: 10px; /* Adjust section margin for mobile */
     }
-}
-
-/* Ensure text doesn’t overflow */
-h1, h2, p {
-    word-wrap: break-word;
-    font-size: 18px;
-    line-height: 1.5;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .topbar {
-        height: 50px; /* Adjust topbar height on small screens */
-    }
 
     .content {
-        margin-top: 50px;
+        margin-top: 50px; /* Adjust content margin for mobile */
     }
 
     h1, h2, p {
-        font-size: 16px;
-    }
-}
-
-/* For smaller screens */
-@media (max-width: 768px) {
-    h1, h2, p {
-        font-size: 4vw; /* Adjust font size further */
-    }
-    .container {
-        padding: 15px;
+        font-size: 16px; /* Adjust text size for mobile */
     }
 }
 
 /* For extra small screens */
 @media (max-width: 480px) {
     h1, h2, p {
-        font-size: 5vw; /* Even smaller font size */
+        font-size: 5vw; /* Smaller font size on extra small screens */
     }
     .container {
         padding: 10px;
     }
 }
 
-/* Top Bar Styles */
+/* Header and navigation styles */
 header {
     background-color: #2fc45f; /* Green background for the header */
     padding: 10px 20px;
@@ -253,17 +216,6 @@ header .nav-links a:hover {
     display: block;
 }
 
-/* Media query for responsiveness */
-@media (max-width: 768px) {
-    .hamburger-menu {
-        display: block;
-    }
-
-    .content-section {
-        padding: 10px;
-    }
-}
-
 /* Content Section Styles */
 .content-section {
     display: none;
@@ -272,25 +224,25 @@ header .nav-links a:hover {
     color: #fff;
     border-radius: 10px;
     margin: 10px 0;
-    overflow-y: auto; /* Enable vertical scrolling */
-    max-height: calc(100vh - 80px); /* Adjust max height as needed */
+    text-align: center;
+    height: 100vh;
+    overflow-y: hidden; /* Prevent scrolling by default */
 }
 
+.content-section.active {
+    display: block;
+    overflow-y: auto; /* Enable scrolling for active section */
+}
+
+/* Adjustments for the "Leistungen" section */
 #services {
-    background-color: transparent; /* Remove background color */
-    padding: 20px 0; /* Add padding for content */
-    overflow-y: auto; /* Enable scrolling */
-    max-height: calc(100vh - 80px); /* Adjust max height as needed */
+    background-color: transparent;
+    padding: 20px 0;
+    overflow-y: auto;
+    max-height: calc(100vh - 80px); /* Adjust max height */
 }
 
-#services h2 {
-    color: #007bff; /* Blue text color */
-    font-size: 3rem; /* Adjust font size as needed */
-    text-align: center; /* Center align the text */
-    margin-top: 0; /* Remove default top margin */
-    margin-bottom: 20px; /* Adjust bottom margin as needed */
-}
-
+/* Service item styles */
 .service-item {
     display: flex;
     align-items: center;
@@ -340,6 +292,7 @@ header .nav-links a:hover {
     font-size: 20px;
 }
 
+/* Service item adjustments for mobile */
 @media (max-width: 768px) {
     .service-item {
         flex-direction: column;
@@ -367,18 +320,17 @@ header {
 
 .green-box {
     background-color: #2fc45f;
-    padding: 10px 0; /* Adjust padding to reduce top and bottom space */
+    padding: 10px 0;
     text-align: center;
-    margin-bottom: 0; /* Remove bottom margin */
+    margin-bottom: 0;
 }
 
 .page-title {
     color: #fff;
     font-size: 2rem;
-    margin-bottom: 5px; /* Reduce bottom margin */
-    margin-top: 0; /* Remove top margin */
-    padding-top: 0; /* Add top padding to move the title closer to the top */
-    padding-bottom: -3330px;
+    margin-bottom: 5px;
+    margin-top: 0;
+    padding-top: 0;
 }
 
 /* Overlay Styles */
@@ -387,15 +339,15 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #2fc45f; /* Green background */
+    background-color: #2fc45f;
     text-align: center;
     padding: 20px;
     box-sizing: border-box;
 }
 
 .overlay h2 {
-    color: #fff; /* White text */
-    font-size: 2rem; /* Adjust size as needed */
+    color: #fff;
+    font-size: 2rem;
     margin: 0;
 }
 
@@ -405,32 +357,17 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    height: 100vh; /* Full viewport height */
-    overflow-y: auto; /* Enable scrolling within the section */
-    padding-top: -50px; /* Adjust top padding to push content down */
+    height: 100vh;
+    overflow-y: auto;
+    padding-top: -50px;
 }
 
 /* Navigation Link Hover Effect */
 .nav-link {
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for the hover effect */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .nav-link:hover {
-    background-color: rgb(0, 102, 255); /* Set the light color you want */
-    color: black; /* Optional: Change text color if needed */
-}
-.content-section {
-    display: none;
-    padding: 20px;
-    background: #444;
-    color: #fff;
-    border-radius: 10px;
-    margin: 10px 0;
-    text-align: center;
-    height: 100vh;
-    overflow-y: hidden; /* Prevent scrolling by default */
-}
-.content-section.active {
-    display: block;
-    overflow-y: auto; /* Enable scrolling for active section */
+    background-color: rgb(0, 102, 255);
+    color: black;
 }
