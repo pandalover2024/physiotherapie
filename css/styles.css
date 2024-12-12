@@ -8,6 +8,14 @@ body {
 }
 
 
+.nav-link {
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.nav-link:hover {
+    background-color: rgb(0, 102, 255); /* Set the light color you want */
+    color: black; /* Optional: Change text color if needed */
+}
 
 
 
