@@ -11,7 +11,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 60px; /* Default height for desktop */
+    height: 60px; /* Adjust the height as needed */
     background-color: #333;
     color: white;
     padding: 15px;
@@ -24,11 +24,6 @@ body {
     padding: 20px;
 }
 
-/* Ensure the "Leistungen" section is also not covered */
-#leistungen {
-    padding-top: 20px;
-}
-
 /* Section-specific styles */
 section {
     padding: 20px;
@@ -37,40 +32,114 @@ section {
     border-radius: 8px;
 }
 
-/* Responsive adjustments for smaller screens */
+/* Ensure the "Leistungen" section is also not covered */
+#leistungen {
+    padding-top: 20px;
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .topbar {
-        height: 50px; /* Smaller topbar height for mobile */
+        height: 50px; /* Adjust topbar height for mobile */
     }
-
+    
     body {
         padding-top: 50px; /* Adjust padding to prevent overlap on small screens */
     }
-
+    
     section {
         margin: 10px; /* Adjust section margin for mobile */
     }
 
-    .content {
-        margin-top: 50px; /* Adjust content margin for mobile */
+    h1, h2, p {
+        font-size: 16px; /* Adjust font size */
     }
 
-    h1, h2, p {
-        font-size: 16px; /* Adjust text size for mobile */
+    /* Header Section */
+    header {
+        padding: 10px 15px;
+    }
+
+    header .logo img {
+        max-height: 40px; /* Smaller logo for mobile */
+    }
+
+    header .page-title {
+        font-size: 1.2rem;
+    }
+
+    header .nav-links {
+        display: none; /* Hide navigation links */
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hamburger-menu {
+        display: block;
+        font-size: 30px;
+    }
+
+    .hamburger-menu.active + .nav-links {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 12px 15px;
+        width: 100%;
+        text-align: left;
+        border-radius: 0;
+        background-color: #333;
+    }
+
+    .nav-links a:hover {
+        background-color: #007bff;
+        color: black;
+    }
+
+    /* Content Section for Mobile */
+    .content-section {
+        padding: 15px;
+    }
+
+    .service-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .service-item img {
+        margin-bottom: 10px;
+        width: 80%;
+    }
+
+    .menu li a {
+        font-size: 16px;
+    }
+
+    /* For extra small screens */
+    @media (max-width: 480px) {
+        h1, h2, p {
+            font-size: 5vw; /* Adjust font size further */
+        }
+
+        header .page-title {
+            font-size: 1.1rem;
+        }
+
+        .hamburger-menu {
+            font-size: 25px;
+        }
+
+        .service-details h3 {
+            font-size: 22px;
+        }
+
+        .service-details p {
+            font-size: 14px;
+        }
     }
 }
 
-/* For extra small screens */
-@media (max-width: 480px) {
-    h1, h2, p {
-        font-size: 5vw; /* Smaller font size on extra small screens */
-    }
-    .container {
-        padding: 10px;
-    }
-}
-
-/* Header and navigation styles */
+/* Top Bar Styles */
 header {
     background-color: #2fc45f; /* Green background for the header */
     padding: 10px 20px;
@@ -130,41 +199,6 @@ header .nav-links a:hover {
     cursor: pointer;
 }
 
-/* Media Query for Smaller Devices */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px;
-    }
-
-    .page-title {
-        font-size: 1.2rem;
-        margin: 10px 0;
-    }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .nav-links a {
-        width: 100%;
-        text-align: left;
-        padding: 15px;
-    }
-
-    .hamburger-menu {
-        display: block;
-    }
-
-    /* Show menu when hamburger is clicked */
-    .hamburger-menu.active + .nav-links {
-        display: flex;
-    }
-}
-
 /* Sidebar Styles */
 .sidebar {
     position: fixed;
@@ -216,6 +250,75 @@ header .nav-links a:hover {
     display: block;
 }
 
+/* Header Content Styles */
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+header {
+    background-color: #2fc45f;
+    padding: 10px 0;
+}
+
+.green-box {
+    background-color: #2fc45f;
+    padding: 10px 0; /* Adjust padding to reduce top and bottom space */
+    text-align: center;
+    margin-bottom: 0; /* Remove bottom margin */
+}
+
+.page-title {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 5px; /* Reduce bottom margin */
+    margin-top: 0; /* Remove top margin */
+    padding-top: 0; /* Add top padding to move the title closer to the top */
+    padding-bottom: -3330px;
+}
+
+/* Overlay Styles */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #2fc45f; /* Green background */
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.overlay h2 {
+    color: #fff; /* White text */
+    font-size: 2rem; /* Adjust size as needed */
+    margin: 0;
+}
+
+/* Team Section Styles */
+#team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh; /* Full viewport height */
+    overflow-y: auto; /* Enable scrolling within the section */
+    padding-top: -50px; /* Adjust top padding to push content down */
+}
+
+/* Navigation Link Hover Effect */
+.nav-link {
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.nav-link:hover {
+    background-color: rgb(0, 102, 255); /* Set the light color you want */
+    color: black; /* Optional: Change text color if needed */
+}
+
 /* Content Section Styles */
 .content-section {
     display: none;
@@ -234,140 +337,3 @@ header .nav-links a:hover {
     overflow-y: auto; /* Enable scrolling for active section */
 }
 
-/* Adjustments for the "Leistungen" section */
-#services {
-    background-color: transparent;
-    padding: 20px 0;
-    overflow-y: auto;
-    max-height: calc(100vh - 80px); /* Adjust max height */
-}
-
-/* Service item styles */
-.service-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
-.service-item img {
-    width: 250px;
-    height: auto;
-    margin-right: 20px;
-    border-radius: 10px;
-}
-
-.service-details {
-    flex: 1;
-}
-
-.service-details h3 {
-    color: #fff;
-    font-size: 28px;
-    margin-bottom: 10px;
-    background-color: #007bff;
-    padding: 15px;
-    display: inline-block;
-    border-radius: 10px;
-    width: fit-content;
-}
-
-.service-details p {
-    margin-bottom: 10px;
-    line-height: 1.5;
-}
-
-.blue-marked-text {
-    color: #007bff;
-    font-weight: bold;
-}
-
-.white-marked-text {
-    color: #fff;
-    font-weight: bold;
-}
-
-.arrow {
-    color: #007bff;
-    margin-left: 10px;
-    font-size: 20px;
-}
-
-/* Service item adjustments for mobile */
-@media (max-width: 768px) {
-    .service-item {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .service-item img {
-        margin-bottom: 10px;
-    }
-}
-
-/* Header Content Styles */
-.header-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-header {
-    background-color: #2fc45f;
-    padding: 10px 0;
-}
-
-.green-box {
-    background-color: #2fc45f;
-    padding: 10px 0;
-    text-align: center;
-    margin-bottom: 0;
-}
-
-.page-title {
-    color: #fff;
-    font-size: 2rem;
-    margin-bottom: 5px;
-    margin-top: 0;
-    padding-top: 0;
-}
-
-/* Overlay Styles */
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #2fc45f;
-    text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.overlay h2 {
-    color: #fff;
-    font-size: 2rem;
-    margin: 0;
-}
-
-/* Team Section Styles */
-#team {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    height: 100vh;
-    overflow-y: auto;
-    padding-top: -50px;
-}
-
-/* Navigation Link Hover Effect */
-.nav-link {
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.nav-link:hover {
-    background-color: rgb(0, 102, 255);
-    color: black;
-}
