@@ -1,10 +1,110 @@
-/* Global Styles */
+/* General page structure */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    color: #333;
-    background-color: #FFEB3B; /* Yellow background */
+}
+
+/* Topbar styling */
+.topbar {
+    position: fixed; /* Fixes it at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; /* Adjust the height as needed */
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+/* Content under the topbar */
+.content {
+    margin-top: 60px; /* Same height as the topbar */
+    padding: 20px;
+}
+/* Ensure the body and all sections are clear of any overlap */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* Add space below the topbar so that the content doesn't get hidden */
+body {
+    padding-top: 60px; /* Adjust this value to match the height of your topbar */
+}
+
+/* Section-specific styles */
+section {
+    padding: 20px;
+    background-color: #f4f4f4;
+    margin: 0 15px;
+    border-radius: 8px;
+}
+
+/* Ensure the "Leistungen" section is also not covered */
+#leistungen {
+    padding-top: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .topbar {
+        height: 50px; /* Adjust topbar height for mobile */
+    }
+    
+    body {
+        padding-top: 50px; /* Adjust padding to prevent overlap on small screens */
+    }
+    
+    section {
+        margin: 10px; /* Adjust section margin for mobile */
+    }
+}
+
+/* Ensure text doesn’t overflow */
+h1, h2, p {
+    word-wrap: break-word;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .topbar {
+        height: 50px; /* Adjust topbar height on small screens */
+    }
+
+    .content {
+        margin-top: 50px;
+    }
+
+    h1, h2, p {
+        font-size: 16px;
+    }
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+    h1, h2, p {
+        font-size: 4vw; /* Adjust font size further */
+    }
+    .container {
+        padding: 15px;
+    }
+}
+
+/* For extra small screens */
+@media (max-width: 480px) {
+    h1, h2, p {
+        font-size: 5vw; /* Even smaller font size */
+    }
+    .container {
+        padding: 10px;
+    }
 }
 
 /* Top Bar Styles */
@@ -19,12 +119,12 @@ header {
     top: 0;
     left: 0;
     z-index: 1000;
-    box-sizing: border-box;
 }
 
 header .logo {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 header .logo img {
@@ -318,4 +418,19 @@ header {
 .nav-link:hover {
     background-color: rgb(0, 102, 255); /* Set the light color you want */
     color: black; /* Optional: Change text color if needed */
+}
+.content-section {
+    display: none;
+    padding: 20px;
+    background: #444;
+    color: #fff;
+    border-radius: 10px;
+    margin: 10px 0;
+    text-align: center;
+    height: 100vh;
+    overflow-y: hidden; /* Prevent scrolling by default */
+}
+.content-section.active {
+    display: block;
+    overflow-y: auto; /* Enable scrolling for active section */
 }
