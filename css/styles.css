@@ -19,12 +19,12 @@ header {
     top: 0;
     left: 0;
     z-index: 1000;
+    box-sizing: border-box;
 }
 
 header .logo {
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 header .logo img {
