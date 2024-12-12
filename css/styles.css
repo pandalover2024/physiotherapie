@@ -37,109 +37,7 @@ section {
     padding-top: 20px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .topbar {
-        height: 50px; /* Adjust topbar height for mobile */
-    }
-    
-    body {
-        padding-top: 50px; /* Adjust padding to prevent overlap on small screens */
-    }
-    
-    section {
-        margin: 10px; /* Adjust section margin for mobile */
-    }
-
-    h1, h2, p {
-        font-size: 16px; /* Adjust font size */
-    }
-
-    /* Header Section */
-    header {
-        padding: 10px 15px;
-    }
-
-    header .logo img {
-        max-height: 40px; /* Smaller logo for mobile */
-    }
-
-    header .page-title {
-        font-size: 1.2rem;
-    }
-
-    header .nav-links {
-        display: none; /* Hide navigation links */
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .hamburger-menu {
-        display: block;
-        font-size: 30px;
-    }
-
-    .hamburger-menu.active + .nav-links {
-        display: flex;
-    }
-
-    .nav-links a {
-        padding: 12px 15px;
-        width: 100%;
-        text-align: left;
-        border-radius: 0;
-        background-color: #333;
-    }
-
-    .nav-links a:hover {
-        background-color: #007bff;
-        color: black;
-    }
-
-    /* Content Section for Mobile */
-    .content-section {
-        padding: 15px;
-    }
-
-    .service-item {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .service-item img {
-        margin-bottom: 10px;
-        width: 80%;
-    }
-
-    .menu li a {
-        font-size: 16px;
-    }
-
-    /* For extra small screens */
-    @media (max-width: 480px) {
-        h1, h2, p {
-            font-size: 5vw; /* Adjust font size further */
-        }
-
-        header .page-title {
-            font-size: 1.1rem;
-        }
-
-        .hamburger-menu {
-            font-size: 25px;
-        }
-
-        .service-details h3 {
-            font-size: 22px;
-        }
-
-        .service-details p {
-            font-size: 14px;
-        }
-    }
-}
-
-/* Top Bar Styles */
+/* Header Section */
 header {
     background-color: #2fc45f; /* Green background for the header */
     padding: 10px 20px;
@@ -153,6 +51,7 @@ header {
     z-index: 1000;
 }
 
+/* Header Logo */
 header .logo {
     display: flex;
     align-items: center;
@@ -163,6 +62,7 @@ header .logo img {
     max-height: 50px; /* Adjust logo size */
 }
 
+/* Header Title */
 header .page-title {
     color: white;
     font-size: 1.5rem;
@@ -170,11 +70,15 @@ header .page-title {
     margin-left: 20px;
 }
 
+/* Navigation Links */
 header .nav-links {
-    display: flex;
+    display: flex; /* Make sure it’s horizontally aligned */
+    justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* Wrap elements if needed */
 }
 
+/* Navigation Links Styling */
 header .nav-links a {
     color: white;
     text-decoration: none;
@@ -189,7 +93,7 @@ header .nav-links a:hover {
     color: black;
 }
 
-/* Hamburger Menu Styles for Mobile */
+/* Hamburger Menu for mobile */
 .hamburger-menu {
     display: none;
     background: none;
@@ -250,78 +154,72 @@ header .nav-links a:hover {
     display: block;
 }
 
-/* Header Content Styles */
-.header-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
+/* Responsive for mobile */
+@media (max-width: 768px) {
+    /* Topbar height adjustment for mobile */
+    .topbar {
+        height: 50px;
+    }
+
+    /* Ensure content does not overlap topbar */
+    body {
+        padding-top: 50px;
+    }
+
+    /* Header and navigation links */
+    header {
+        padding: 10px 15px;
+    }
+
+    header .logo img {
+        max-height: 40px; /* Smaller logo for mobile */
+    }
+
+    header .nav-links {
+        flex-direction: row; /* Keep horizontal layout on mobile */
+        justify-content: center; /* Center the links horizontally */
+        width: 100%;
+    }
+
+    header .nav-links a {
+        padding: 8px 15px;
+        margin: 5px;
+        font-size: 14px; /* Smaller font size for mobile */
+    }
+
+    /* Hamburger Menu */
+    .hamburger-menu {
+        display: block;
+    }
+
+    /* Sidebar navigation for mobile */
+    .sidebar.active {
+        right: 0;
+        opacity: 1;
+    }
+
+    .menu {
+        width: 100%;
+    }
 }
 
-header {
-    background-color: #2fc45f;
-    padding: 10px 0;
+/* Extra small screen adjustments */
+@media (max-width: 480px) {
+    h1, h2, p {
+        font-size: 5vw; /* Adjust font size further */
+    }
+
+    header .page-title {
+        font-size: 1.2rem;
+    }
+
+    .hamburger-menu {
+        font-size: 25px;
+    }
 }
 
-.green-box {
-    background-color: #2fc45f;
-    padding: 10px 0; /* Adjust padding to reduce top and bottom space */
-    text-align: center;
-    margin-bottom: 0; /* Remove bottom margin */
-}
-
-.page-title {
-    color: #fff;
-    font-size: 2rem;
-    margin-bottom: 5px; /* Reduce bottom margin */
-    margin-top: 0; /* Remove top margin */
-    padding-top: 0; /* Add top padding to move the title closer to the top */
-    padding-bottom: -3330px;
-}
-
-/* Overlay Styles */
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #2fc45f; /* Green background */
-    text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.overlay h2 {
-    color: #fff; /* White text */
-    font-size: 2rem; /* Adjust size as needed */
-    margin: 0;
-}
-
-/* Team Section Styles */
-#team {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    height: 100vh; /* Full viewport height */
-    overflow-y: auto; /* Enable scrolling within the section */
-    padding-top: -50px; /* Adjust top padding to push content down */
-}
-
-/* Navigation Link Hover Effect */
-.nav-link {
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for the hover effect */
-}
-
-.nav-link:hover {
-    background-color: rgb(0, 102, 255); /* Set the light color you want */
-    color: black; /* Optional: Change text color if needed */
-}
-
-/* Content Section Styles */
+/* Content Sections */
 .content-section {
-    display: none;
     padding: 20px;
     background: #444;
     color: #fff;
@@ -336,4 +234,3 @@ header {
     display: block;
     overflow-y: auto; /* Enable scrolling for active section */
 }
-
