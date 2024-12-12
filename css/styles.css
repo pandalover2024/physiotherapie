@@ -1,24 +1,170 @@
+/* Global Styles */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    color: #333;
+    background-color: #FFEB3B; /* Yellow background */
+}
+
+/* Top Bar Styles */
+header {
+    background-color: #2fc45f; /* Green background for the header */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .logo img {
+    max-height: 50px; /* Adjust logo size */
+}
+
+header .page-title {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+header .nav-links {
+    display: flex;
+    align-items: center;
+}
+
+header .nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header .nav-links a:hover {
+    background-color: #007bff; /* Blue background on hover */
+    color: black;
+}
+
+/* Hamburger Menu Styles for Mobile */
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Media Query for Smaller Devices */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .page-title {
+        font-size: 1.2rem;
+        margin: 10px 0;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links a {
+        width: 100%;
+        text-align: left;
+        padding: 15px;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    /* Show menu when hamburger is clicked */
+    .hamburger-menu.active + .nav-links {
+        display: flex;
+    }
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Hidden off-screen */
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.3);
+    transition: right 0.4s ease-in-out; /* Smooth slide-in animation */
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    opacity: 0; /* Hidden by default */
+}
+
+/* Sidebar becomes visible when active */
+.sidebar.active {
+    right: 0; /* Slide in from the right */
+    opacity: 1; /* Make it visible */
+}
+
+/* Menu styles */
+.menu {
+    list-style-type: none;
+    padding: 0;
+    display: none; /* Hidden by default */
+}
+
+.menu li {
+    margin: 20px 0;
+}
+
+.menu li a {
     color: #fff;
-    background-color: #333; /* Dark grey background */
-    overflow: hidden; /* Prevent scrolling */
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.2s;
 }
 
-
-.nav-link {
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for the hover effect */
+.menu li a:hover {
+    color: #2fc45f;
 }
 
-.nav-link:hover {
-    background-color: rgb(0, 102, 255); /* Set the light color you want */
-    color: black; /* Optional: Change text color if needed */
+/* Show menu when sidebar is active */
+.sidebar.active .menu {
+    display: block;
 }
 
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+    }
 
+    .content-section {
+        padding: 10px;
+    }
+}
 
+/* Content Section Styles */
 .content-section {
     display: none;
     padding: 20px;
@@ -44,6 +190,7 @@ body {
     margin-top: 0; /* Remove default top margin */
     margin-bottom: 20px; /* Adjust bottom margin as needed */
 }
+
 .service-item {
     display: flex;
     align-items: center;
@@ -98,12 +245,13 @@ body {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .service-item img {
         margin-bottom: 10px;
     }
 }
 
+/* Header Content Styles */
 .header-content {
     display: flex;
     flex-direction: column;
@@ -133,8 +281,7 @@ header {
     padding-bottom: -3330px;
 }
 
-
-
+/* Overlay Styles */
 .overlay {
     position: absolute;
     top: 0;
@@ -152,6 +299,7 @@ header {
     margin: 0;
 }
 
+/* Team Section Styles */
 #team {
     display: flex;
     flex-direction: column;
@@ -160,4 +308,14 @@ header {
     height: 100vh; /* Full viewport height */
     overflow-y: auto; /* Enable scrolling within the section */
     padding-top: -50px; /* Adjust top padding to push content down */
+}
+
+/* Navigation Link Hover Effect */
+.nav-link {
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.nav-link:hover {
+    background-color: rgb(0, 102, 255); /* Set the light color you want */
+    color: black; /* Optional: Change text color if needed */
 }
